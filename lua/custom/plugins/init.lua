@@ -21,6 +21,7 @@ local plugins = {
 		opts = {},
 	},
 	"github/copilot.vim",
-	"mbbill/undotree"
+	"mbbill/undotree",
+	"tpope/vim-fugitive",
 }
 return plugins
