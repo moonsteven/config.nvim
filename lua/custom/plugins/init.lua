@@ -20,5 +20,7 @@ local plugins = {
 		priority = 1000,
 		opts = {},
 	},
+	"github/copilot.vim",
+	"mbbill/undotree"
 }
 return plugins
