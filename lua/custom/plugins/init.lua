@@ -24,4 +24,5 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 }
+
 return plugins
