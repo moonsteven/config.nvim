@@ -28,3 +28,8 @@ vim.api.nvim_set_keymap('n', '<leader>nt', ':NvimTreeToggle<cr>', { noremap = tr
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- Copy to system clipboard
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>Y', '"+Y')
