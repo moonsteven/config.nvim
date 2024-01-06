@@ -6,6 +6,7 @@ local plugins = {
   'github/copilot.vim',
   'mbbill/undotree',
   'tpope/vim-fugitive',
+  'jmbuhr/otter.nvim',
 }
 
 return plugins
