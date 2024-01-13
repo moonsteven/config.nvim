@@ -26,4 +26,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = '80'
 
 -- Set Colorscheme
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme catppuccin]]

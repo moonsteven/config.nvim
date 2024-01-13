@@ -130,6 +130,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
       capabilities.textDocument.completion.completionItem.snippetSupport = true
+
       -- See https://github.com/neovim/neovim/issues/23291
       if capabilities.workspace == nil then
         capabilities.workspace = {}
@@ -141,7 +142,6 @@ return {
       local mason_lspconfig = require 'mason-lspconfig'
 
       mason_lspconfig.setup {
-        automatic_installation = true,
         ensure_installed = vim.tbl_keys(servers),
       }
 

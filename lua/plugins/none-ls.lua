@@ -14,6 +14,8 @@ return {
         },
         null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.beautysh,
+        null_ls.builtins.diagnostics.shellcheck,
       },
       on_attach = function(client, bufnr)
         if client.supports_method 'textDocument/formatting' then
