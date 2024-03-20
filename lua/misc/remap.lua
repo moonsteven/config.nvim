@@ -34,3 +34,12 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
+
+-- Noice
+vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = 'Dismiss notification' })
+
+-- Twilight
+vim.keymap.set('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle Twilight' })
+
+-- Quarto
+vim.keymap.set('n', '<leader>qp', '<cmd>QuartoPreview<CR>', { desc = 'Quarto' })

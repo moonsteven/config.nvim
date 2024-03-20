@@ -14,6 +14,7 @@ return {
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-calc' },
       { 'hrsh7th/cmp-emoji' },
+      { 'hrsh7th/cmp-cmdline' },
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -32,7 +33,7 @@ return {
               auto_trigger = true,
               debounce = 75,
               keymap = {
-                accept = '<c-a>',
+                accept = '<M-a>',
                 accept_word = false,
                 accept_line = false,
                 next = '<M-]>',
@@ -40,7 +41,7 @@ return {
                 dismiss = '<C-]>',
               },
             },
-            panel = { enabled = false },
+            panel = { enabled = true },
           }
         end,
       },
@@ -54,10 +55,6 @@ return {
 
       lspkind.init()
 
-      local has_words_before = function()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
-      end
       require('luasnip.loaders.from_vscode').lazy_load()
       luasnip.config.setup {}
 
@@ -142,6 +139,8 @@ return {
           },
         },
       }
+
+      --
       -- for friendly snippets
       require('luasnip.loaders.from_vscode').lazy_load()
       -- for custom snippets

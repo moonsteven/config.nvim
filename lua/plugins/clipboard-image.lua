@@ -1,5 +1,3 @@
--- paste an image to markdown from the clipboard
--- :PasteImg,
 return {
   'dfendr/clipboard-image.nvim',
   keys = {

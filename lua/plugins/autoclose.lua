@@ -3,5 +3,5 @@ return {
   config = function()
     require('nvim-autopairs').setup()
   end,
-  requires = { 'nvim-treesitter/nvim-treesitter' },
+  dependencies = { 'nvim-treesitter/nvim-treesitter' },
 }

@@ -13,13 +13,12 @@ return {
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
       {
         'microsoft/python-type-stubs',
-        cond = false,
       },
     },
     config = function()
@@ -98,6 +97,18 @@ return {
         client.server_capabilities.document_formatting = true
       end
 
+      vim.diagnostic.config {
+        virtual_text = false,
+      }
+
+      vim.o.updatetime = 250
+      vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+        group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
+        callback = function()
+          vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+        end,
+      })
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -167,8 +178,10 @@ return {
         underline = true,
         update_in_insert = false,
       })
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = require('misc.style').border })
-      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = require('misc.style').border })
+      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover,
+        { border = require('misc.style').border })
+      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help,
+        { border = require('misc.style').border })
 
       -- also needs:
       -- $home/.config/marksman/config.toml :
@@ -325,7 +338,8 @@ return {
           },
         },
         root_dir = function(fname)
-          return util.root_pattern('.git', 'setup.py', 'setup.cfg', 'pyproject.toml', 'requirements.txt')(fname) or util.path.dirname(fname)
+          return util.root_pattern('.git', 'setup.py', 'setup.cfg', 'pyproject.toml', 'requirements.txt')(fname) or
+          util.path.dirname(fname)
         end,
       }
 
