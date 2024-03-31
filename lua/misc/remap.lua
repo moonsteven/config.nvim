@@ -37,6 +37,7 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 
 -- Noice
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = 'Dismiss notification' })
+vim.keymap.set('n', '<leader>nh', '<cmd>NoiceHistory<CR>', { desc = 'Show notification history' })
 
 -- Twilight
 vim.keymap.set('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle Twilight' })
