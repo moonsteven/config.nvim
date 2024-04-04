@@ -382,4 +382,4 @@ require 'misc.remap'
 -- vim: ts=2 sts=2 sw=2 et
 
 -- Python Specific Settings:
-vim.g.python3_host_prog = '/home/steven/.virtualenvs/segmentation/bin/python3.10'
+-- vim.g.python3_host_prog = '/home/steven/.virtualenvs/segmentation/bin/python3.10'

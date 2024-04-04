@@ -1,5 +1,5 @@
 local HEIGHT_RATIO = 0.8 -- You can change this
-local WIDTH_RATIO = 0.5 -- You can change this too
+local WIDTH_RATIO = 0.15 -- You can change this too
 
 return {
   {
@@ -18,7 +18,7 @@ return {
         view = {
           relativenumber = true,
           float = {
-            enable = true,
+            enable = false,
             open_win_config = function()
               local screen_w = vim.opt.columns:get()
               local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()

@@ -44,3 +44,12 @@ vim.keymap.set('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle Twilight
 
 -- Quarto
 vim.keymap.set('n', '<leader>qp', '<cmd>QuartoPreview<CR>', { desc = 'Quarto' })
+
+-- CopilotChat
+vim.keymap.set('n', '<leader>cc', '<cmd>CopilotChat<CR>', { desc = 'Copilot Chat' })
+vim.keymap.set('n', '<leader>ccq', function()
+  local input = vim.fn.input 'Quick Chat: '
+  if input ~= '' then
+    require('CopilotChat').ask(input, { selection = require('CopilotChat.select').buffer })
+  end
+end, { desc = 'Copilot Chat - Quick chat' })

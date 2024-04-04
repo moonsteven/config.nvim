@@ -6,16 +6,15 @@ return {
     null_ls.setup {
       sources = {
         null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.sql_formatter,
+        null_ls.builtins.formatting.shfmt,
         null_ls.builtins.diagnostics.mypy.with {
           extra_args = function()
             local virtual = os.getenv 'VIRTUAL_ENV' or os.getenv 'CONDA_PREFIX' or '/usr'
             return { '--python-executable', virtual .. '/bin/python3.10' }
           end,
         },
-        null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.beautysh,
-        null_ls.builtins.diagnostics.shellcheck,
       },
       on_attach = function(client, bufnr)
         if client.supports_method 'textDocument/formatting' then

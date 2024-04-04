@@ -41,7 +41,9 @@ return {
                 dismiss = '<C-]>',
               },
             },
-            panel = { enabled = true },
+            panel = {
+              enabled = true,
+            },
           }
         end,
       },
@@ -119,13 +121,13 @@ return {
         sources = {
           { name = 'otter' },
           { name = 'nvim_lsp' },
-          { name = 'luasnip', keyword_length = 3, max_item_count = 3 },
+          { name = 'luasnip',                keyword_length = 3, max_item_count = 3 },
           { name = 'path' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'pandoc_references' },
-          { name = 'buffer', keyword_length = 5, max_item_count = 3 },
+          { name = 'buffer',                 keyword_length = 5, max_item_count = 3 },
           { name = 'spell' },
-          { name = 'treesitter', keyword_length = 5, max_item_count = 3 },
+          { name = 'treesitter',             keyword_length = 5, max_item_count = 3 },
           { name = 'calc' },
           { name = 'latex_symbols' },
           { name = 'emoji' },
