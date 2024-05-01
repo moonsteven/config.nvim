@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>nh', '<cmd>NoiceHistory<CR>', { desc = 'Show notifi
 vim.keymap.set('n', '<leader>tw', '<cmd>Twilight<CR>', { desc = 'Toggle Twilight' })
 
 -- Quarto
-vim.keymap.set('n', '<leader>qp', '<cmd>QuartoPreview<CR>', { desc = 'Quarto' })
+vim.keymap.set('n', '<leader>Qp', '<cmd>QuartoPreview<CR>', { desc = 'Quarto' })
 
 -- CopilotChat
 vim.keymap.set('n', '<leader>cc', '<cmd>CopilotChat<CR>', { desc = 'Copilot Chat' })
